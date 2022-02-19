@@ -269,3 +269,6 @@ a {
 #toggle, label {
     visibility: hidden;
 }
+#toggle{
+    transition-duration: 0ms;
+}
