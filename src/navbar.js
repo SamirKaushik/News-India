@@ -47,9 +47,9 @@ const Nav = ({ selectType, underlined }) => {
                                 <button type="button" onClick={() => { selectType(1) }}>Business</button>
                                 <button type="button" onClick={() => { selectType(2) }}>Entertainment</button>
                                 <button type="button" onClick={() => { selectType(3) }}>Health</button>
-                                <button type="button" onClick={() => { selectType(4) }}>Science</button>
-                                <button type="button" onClick={() => { selectType(5) }}>Sports</button>
-                                <button type="button" onClick={() => { selectType(6) }}>Technology</button>
+                                <button type="button" onClick={() => { selectType(4) }}>Sports</button>
+                                <button type="button" onClick={() => { selectType(5) }}>Technology</button>
+                                <button type="button" onClick={() => { selectType(6) }}>Sample</button>
                         </div>
                 </nav>
         );

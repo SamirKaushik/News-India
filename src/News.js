@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Item from "./news-card";
+import { sample } from "./sampleData";
 const News = ({ type }) => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const category = ["", "business", "entertainment", "health", "science", "sports", "technology"];
-    const apiKey="bd96f791721640efb0c41bfe0da6e2c7";
+    const category = ["", "business", "entertainment", "health", "sports", "technology"];
+    const apiKey="";
     const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category[type]}&apiKey=${apiKey}`;
     
     useEffect(() => {
@@ -22,6 +23,12 @@ const News = ({ type }) => {
             setLoading(false);
         }).catch(error=>{setError(error)})
     },[type]);
+    if(type===6)
+    return (
+        <section>
+            {sample.map((item, index) => item.urlToImage === null? "" : <Item data={item} key={index} />)}
+        </section>
+    );
     if (error)
         return (
             <section>
@@ -42,6 +49,3 @@ const News = ({ type }) => {
     );
 }
 export default News;
-// 9fccc872747f43e4b3ec7402ca1abb4a
-// bd96f791721640efb0c41bfe0da6e2c7
-// 2aae928708d4463ebab72eb1498bf4aa
